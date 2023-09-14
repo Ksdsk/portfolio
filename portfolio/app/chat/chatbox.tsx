@@ -1,23 +1,91 @@
+'use client'
+
+import { FormEvent, useState } from "react";
 import {BsFillSendFill} from "react-icons/bs"
 
-export default function ChatBox() {
- return (
-        <div className='backdrop-blur-md'>
+interface IBubble {
+    type: string;
+    text: string;
+}
+
+export default function ChatBox(props: { handleCallback: (arg0: IBubble) => void; }) {
+
+    const [input, setInput] = useState("")
+    const [disabled, setDisabled] = useState(false)
+
+    const onSubmit = async(e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setDisabled(true)
+
+        const savedPrompt = input;
+        const bubble: IBubble = {
+            type: "prompt",
+            text: input
+        }
+        const emptybubble: IBubble = {
+            type: "completion",
+            text: "..."
+        }
+        const errorBubble: IBubble = {
+            type: "completion",
+            text: "There was an error. Try asking me again!"
+        }
+
+        setInput("");
+        props.handleCallback([bubble, emptybubble])
+        
+
+        try {
+            const res = await fetch('/api/gpt', {
+                method: "POST",
+                mode: "cors",
+                credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "prompt": savedPrompt
+                })
+            })
+            
+            const completion = await res.json()
+            const gptBubble: IBubble = {
+                type: "completion",
+                text: completion["message"]
+            }
+    
+            props.handleCallback([bubble, gptBubble])
+        } catch (e) {
+            console.log(e)
+            props.handleCallback([bubble, errorBubble])
+        } finally {
+            setDisabled(false)
+        }
+    }
+
+    return (
+        <div className='backdrop-blur-md sticky bottom-0 pt-8'>
             <div className='flex justify-center'>
-                <form className='dark:text-gray-400 w-6/12 flex'>
-                <input type="text" name="prompt" className='backdrop-blur-md bg-white/10 focus:outline-none focus:text-white rounded-full py-2 pl-6 pr-12 w-full'
-                placeholder='Try asking me "Tell me about yourself"'>
-                </input>
-                <div className="grid content-center">
-                    <div className="relative right-9">
-                        <BsFillSendFill size={"20px"} className="hover:text-white transition ease-linear cursor-pointer"/>
+                <form className='dark:text-gray-400 flex w-3/6' onSubmit={onSubmit} method="POST">
+                    <input type="text" name="prompt" className='relative left-4 backdrop-blur-md bg-white/10 focus:outline-none focus:text-white rounded-full py-2 pl-6 pr-12 w-full'
+                    placeholder='Try asking me "Tell me about yourself"'
+                    onChange={(e) => {
+                        setInput(e.target.value)
+                    }}
+                    value={input}
+                    disabled={disabled}
+                    >
+                    </input>
+                    <div className="grid content-center">
+                        <button type="submit" className="relative right-4">
+                            <BsFillSendFill size={"20px"} className="hover:text-white transition ease-linear cursor-pointer"/>
+                        </button>
                     </div>
-                </div>
                 </form>
             </div>
 
             <div className='flex gap-6 justify-center pt-4'>
-                <p className=' font-light text-xs'>
+                <p className='font-light text-xs'>
                 Please be aware that the chat may not provide overly personal information.
                 </p>
             </div>

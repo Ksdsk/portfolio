@@ -27,5 +27,26 @@ body {
 }
 
 main {
-  background-image: url('../public/preview.jpg');
+  /* background-image: url('../public/preview.jpg'); */
 }
+
+.chatbubbles {
+  max-height: 60vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+

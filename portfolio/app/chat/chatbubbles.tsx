@@ -1,18 +1,20 @@
-export default function ChatBubbles() {
+import Prompt from "./bubbles/prompt"
+import Completion from "./bubbles/completion"
+
+interface IBubble {
+    type: string;
+    text: string;
+}
+
+export default function ChatBubbles(props: {bubble: IBubble[]}) {
     return (
-        <div className="grid grid-cols-4 gap-4 grid-rows-4 bg-purple-400 mb-6">
-            <div className="bg-amber-500 h-14 col-start-2">
-
-            </div>
-            <div className="bg-amber-500 h-20 col-start-2">
-
-            </div>
-            <div className="bg-amber-500 h-14 col-start-2">
-
-            </div>
-            <div className="bg-amber-500 h-14 col-start-2">
-
-            </div>
+        <div className="m-6 overflow-y-auto chatbubbles no-scrollbar">
+            {
+                props.bubble.map((bubble: IBubble) =>
+                    bubble.type == "prompt" ? <Prompt text={bubble.text}/> 
+                                            : <Completion text={bubble.text}/>
+                )
+            }
         </div>
     )
 }
