@@ -37,11 +37,11 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
         try {
             const res = await fetch('/api/gpt', {
                 method: "POST",
-                // mode: "cors",
-                // credentials: "same-origin",
-                // headers: {
-                //     "Content-Type": "application/json"
-                // },
+                mode: "cors",
+                credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({
                     "prompt": savedPrompt
                 })
