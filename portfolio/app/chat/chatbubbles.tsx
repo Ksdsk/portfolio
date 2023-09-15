@@ -1,6 +1,6 @@
 import Prompt from "./bubbles/prompt"
 import Completion from "./bubbles/completion"
-import { randomUUID } from "crypto";
+import { v4 as uuidv4 } from "uuid";
 
 interface IBubble {
     type: string;
@@ -13,8 +13,8 @@ export default function ChatBubbles(props: {bubble: IBubble[]}) {
             
             {
                 props.bubble.map((bubble: IBubble) =>
-                    bubble.type == "prompt" ? <Prompt text={bubble.text} key={randomUUID()}/> 
-                                            : <Completion text={bubble.text} key={randomUUID()}/>
+                    bubble.type == "prompt" ? <Prompt text={bubble.text} key={uuidv4()}/> 
+                                            : <Completion text={bubble.text} key={uuidv4()}/>
                 )
             }
         </div>
