@@ -38,7 +38,7 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
             const res = await fetch('/api/gpt', {
                 method: "POST",
                 mode: "cors",
-                credentials: "same-origin",
+                // credentials: "same-origin",
                 headers: {
                     "Content-Type": "application/json"
                 },
