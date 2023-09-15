@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {BsFillSendFill} from "react-icons/bs"
 
 interface IBubble {
@@ -8,7 +8,7 @@ interface IBubble {
     text: string;
 }
 
-export default function ChatBox(props: { handleCallback: (arg0: IBubble) => void; }) {
+export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => void; }) {
 
     const [input, setInput] = useState("")
     const [disabled, setDisabled] = useState(false)
@@ -33,7 +33,6 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble) => void
 
         setInput("");
         props.handleCallback([bubble, emptybubble])
-        
 
         try {
             const res = await fetch('/api/gpt', {

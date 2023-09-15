@@ -16,7 +16,7 @@ export default function Chat() {
     }
 
     return (
-        <div className="h-full">
+        <div className="">
             <ChatBubbles bubble={bubbleData}/>
             <ChatBox handleCallback={callBack}/>
         </div>

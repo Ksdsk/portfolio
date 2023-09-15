@@ -31,7 +31,8 @@ main {
 }
 
 .chatbubbles {
-  max-height: 60vh;
+  height: 60vh;
+  overflow-anchor: auto;
 }
 
 /* width */

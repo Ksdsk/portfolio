@@ -4,7 +4,7 @@ import Header from './header'
 
 export default function Home() {
   return (
-    <main className="bg-cover h-screen flex justify-center overflow-hidden">
+    <main className="bg-cover h-screen flex justify-center">
       <div id="container" className="container bg-black flex flex-col justify-between py-20">
         <div className=''>
           <Header/>

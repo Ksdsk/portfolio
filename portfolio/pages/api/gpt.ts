@@ -4,8 +4,12 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import resume from "./data/resume";
 
 const api = new ChatGPTAPI({
-    apiKey: process.env.OPENAI_API_KEY
+    apiKey: process.env.OPENAI_API_KEY!
 })
+
+type ResponseData = {
+    message: string
+}
 
 export default async function handler(
     req: NextApiRequest,
