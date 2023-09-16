@@ -63,10 +63,10 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
     }
 
     return (
-        <div className='backdrop-blur-md sticky bottom-0 pt-8'>
-            <div className='flex justify-center'>
-                <form className='dark:text-gray-400 flex w-3/6' onSubmit={onSubmit} method="POST">
-                    <input type="text" name="prompt" className='relative left-4 backdrop-blur-md bg-white/10 focus:outline-none focus:text-white rounded-full py-2 pl-6 pr-12 w-full'
+        <div className='pt-6'>
+            <div className='flex justify-between gap-6'>
+                <form className='dark:text-gray-400 flex w-full' onSubmit={onSubmit} method="POST">
+                    <input type="text" name="prompt" className='backdrop-blur-md bg-white/10 focus:outline-none focus:text-white rounded-full py-2 pl-6 pr-12 w-full'
                     placeholder='Try asking me "Tell me about yourself"'
                     onChange={(e) => {
                         setInput(e.target.value)
@@ -75,11 +75,13 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
                     disabled={disabled}
                     >
                     </input>
-                    <div className="grid content-center">
-                        <button type="submit" className="relative right-4">
+
+                    <button type="submit" className="">
+                        <div className="grid content-center bg-white/10 rounded-full p-3 ml-4">
                             <BsFillSendFill size={"20px"} className="hover:text-white transition ease-linear cursor-pointer"/>
-                        </button>
-                    </div>
+                        </div>
+                    </button>
+
                 </form>
             </div>
 

@@ -9,7 +9,7 @@ interface IBubble {
 
 export default function ChatBubbles(props: {bubble: IBubble[]}) {
     return (
-        <div className="m-6 chatbubbles overflow-auto" id="bubblearea">
+        <div className="chatbubbles max-h-full" id="bubblearea">
             
             {
                 props.bubble.map((bubble: IBubble) =>

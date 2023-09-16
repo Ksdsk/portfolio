@@ -30,11 +30,6 @@ main {
   /* background-image: url('../public/preview.jpg'); */
 }
 
-.chatbubbles {
-  height: 60vh;
-  overflow-anchor: auto;
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 4px;

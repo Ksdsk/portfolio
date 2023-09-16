@@ -1,9 +1,10 @@
-import Avatar from "./avatar";
+import Items from "./items";
+
 
 export default function Header() {
     return (
         <div>
-            <Avatar/>
+            <Items/>
         </div>
     )
 }
