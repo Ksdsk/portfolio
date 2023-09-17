@@ -77,7 +77,7 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
                     </input>
 
                     <button type="submit" className="">
-                        <div className="grid content-center bg-white/10 rounded-full p-3 ml-4">
+                        <div className="text-white/50 grid content-center bg-white/10 rounded-full p-3 ml-4">
                             <BsFillSendFill size={"20px"} className="hover:text-white transition ease-linear cursor-pointer"/>
                         </div>
                     </button>
@@ -86,7 +86,7 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
             </div>
 
             <div className='flex gap-6 justify-center pt-4'>
-                <p className='font-light text-xs'>
+                <p className='font-light text-xs text-white/60'>
                 Please be aware that the chat may not provide overly personal information.
                 </p>
             </div>
