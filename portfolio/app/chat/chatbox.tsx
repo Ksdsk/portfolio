@@ -89,7 +89,7 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
             </div>
 
             <div className='flex gap-6 justify-center pt-4'>
-                <p className='font-light text-xs text-white/60'>
+                <p className='font-light text-xs dark:text-white/60 text-black/70'>
                 Please be aware that the chat may not provide overly personal information.
                 </p>
             </div>
