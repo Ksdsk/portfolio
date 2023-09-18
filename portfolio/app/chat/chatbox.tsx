@@ -12,6 +12,7 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
 
     const [input, setInput] = useState("")
     const [disabled, setDisabled] = useState(false)
+    const [chatId, setChatId] = useState("")
 
     const onSubmit = async(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -43,16 +44,18 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    "prompt": savedPrompt
+                    "prompt": savedPrompt,
+                    "historyId": chatId
                 })
             })
             
             const completion = await res.json()
             const gptBubble: IBubble = {
                 type: "completion",
-                text: completion["message"]
+                text: completion["completion"]["text"]
             }
-    
+
+            setChatId(completion["completion"]["id"]);
             props.handleCallback([bubble, gptBubble])
         } catch (e) {
             console.log(e)
