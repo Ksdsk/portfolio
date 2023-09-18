@@ -1,4 +1,5 @@
 import { BsLinkedin, BsGithub, BsFillEnvelopeFill } from "react-icons/bs"
+import { BiSolidDownload } from "react-icons/bi"
 
 export default function Header() {
     return(
@@ -7,7 +8,12 @@ export default function Header() {
                 <p>Daniel Kang :&#41;</p>
             </div>
             <div className="flex justify-end gap-3 text-white/50">
-                <a className="hover:text-white hover:border-white/80 transition ease-linear" href="Daniel_Kang_NewGradResume_2024.pdf" download={true}>Download Resume</a>
+                <a className="hover:text-white hover:border-white/80 transition ease-linear" href="Daniel_Kang_NewGradResume_2024.pdf" download={true}>
+                    <div className="flex gap-1">
+                        <p className="border-b border-white/50">Resume</p>
+                    </div>
+                    
+                </a>
                 <div className="border-l border-white/50"></div>
                 <div className="grid content-center">
                     <div className="flex gap-3">
