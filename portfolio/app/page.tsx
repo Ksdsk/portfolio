@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import Chat from './chat'
-import Header from './header'
 
 export default function Home() {
   return (

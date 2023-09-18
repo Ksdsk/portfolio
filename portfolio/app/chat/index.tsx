@@ -2,6 +2,7 @@
 import React from "react";
 import ChatBox from "./chatbox";
 import ChatBubbles from "./chatbubbles";
+import Header from './header'
 
 interface IBubble {
     type: string;
@@ -17,16 +18,8 @@ export default function Chat() {
 
     return (
         <div className="h-full flex flex-col justify-between">
-            <div className="flex justify-between mx-6 border-b border-white/20 pb-6 text-white/50">
-                <div>
-                    <p className="">Daniel</p>
-                </div>
-                <div className="flex justify-end gap-6">
-                    <a className="border-b hover:text-white hover:border-white/80 transition ease-linear" href="Daniel_Kang_NewGradResume_2024.pdf" download={true}>Resume</a>
-                    <a className="border-b hover:text-white hover:border-white/80 transition ease-linear" href="https://www.linkedin.com/in/smdanielkang">Linkedin</a>
-                    <a className="border-b hover:text-white hover:border-white/80 transition ease-linear" href="https://www.github.com/Ksdsk">GitHub</a>
-                    <a className="border-b hover:text-white hover:border-white/80 transition ease-linear" href="mailto:danielkang@dal.ca">Email</a>
-                </div>
+            <div className="flex justify-between mx-6 border-b border-white/20 pb-6">
+                <Header/>
             </div>
 
             <div className="overflow-y-auto h-full mx-2">
