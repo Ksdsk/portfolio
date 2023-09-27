@@ -4,7 +4,10 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import resume from "./data/resume";
 
 const api = new ChatGPTAPI({
-    apiKey: process.env.OPENAI_API_KEY!
+    apiKey: process.env.OPENAI_API_KEY!,
+    completionParams: {
+        model: "gpt-4"
+    }
 })
 
 type ResponseData = {
@@ -19,12 +22,14 @@ export default async function handler(
     if (req.body["historyId"] == "") {
         const comp = await api.sendMessage(req.body["prompt"], {
             systemMessage: resume + "\n Return your answers at the maximum of 8 sentences. Use markdown, but tildes (~) should be escaped!",
+            timeoutMs: 1000 * 60
         })
         res.status(200).json({ completion: comp })
     } else {
         const comp = await api.sendMessage(req.body["prompt"], {
-            systemMessage: resume + "\n Return your answers at the maximum of 8 sentences. Use markdown.",
-            parentMessageId: req.body["historyId"]
+            systemMessage: resume + "\n Return your answers at the maximum of 8 sentences. Use markdown, but tildes (~) should be escaped!",
+            parentMessageId: req.body["historyId"],
+            timeoutMs: 1000 * 60
         })
 
         res.status(200).json({ completion: comp })

@@ -13,6 +13,8 @@ Education:
   - Halifax, Nova Scotia
   - Bachelor of Computer Science, currently a 4th year.
   - GPA: 3.9/4.3
+  - Start: September 2020
+  - End: April 2024 or September 2024
 
 Experience:
 - Software Development Engineering Intern at Amazon Web Services
