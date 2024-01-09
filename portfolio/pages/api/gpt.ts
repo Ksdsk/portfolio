@@ -22,13 +22,13 @@ export default async function handler(
 
     if (req.body["historyId"] == "") {
         const comp = await api.sendMessage(req.body["prompt"], {
-            systemMessage: resume + personal + " Stick to 8 sentences or less",
+            systemMessage: resume + personal + " Stick to 5 sentences or less",
             timeoutMs: 1000 * 60
         })
         res.status(200).json({ completion: comp })
     } else {
         const comp = await api.sendMessage(req.body["prompt"], {
-            systemMessage: resume + personal + " Stick to 8 sentences or less",
+            systemMessage: resume + personal + " Stick to 5 sentences or less",
             parentMessageId: req.body["historyId"],
             timeoutMs: 1000 * 60
         })

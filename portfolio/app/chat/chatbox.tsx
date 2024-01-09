@@ -66,11 +66,11 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
     }
 
     return (
-        <div className='pt-6'>
+        <div className='mt-6'>
             <div className='flex justify-between gap-6'>
-                <form className='dark:text-gray-400 text-black flex w-full' onSubmit={onSubmit} method="POST">
-                    <input type="text" name="prompt" className='backdrop-blur-md dark:bg-white/10 bg-black/10 focus:outline-none dark:focus:text-white focus:text-black rounded-full py-2 pl-6 pr-12 w-full dark:placeholder-white/50 placeholder-gray-500'
-                    placeholder='Try asking me "Tell me about yourself"'
+                <form className='text-gray-400 flex w-full' onSubmit={onSubmit} method="POST">
+                    <input type="text" name="prompt" className='backdrop-blur-md bg-white/10 focus:outline-none focus:text-white rounded-full py-2 pl-6 pr-12 w-full placeholder-white/50'
+                    placeholder='Ask me anything...'
                     onChange={(e) => {
                         setInput(e.target.value)
                     }}
@@ -80,17 +80,17 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
                     </input>
 
                     <button type="submit" className="">
-                        <div className="dark:text-white/50 text-black/50 grid content-center dark:bg-white/10 bg-black/10 rounded-full p-3 ml-4">
-                            <BsFillSendFill size={"20px"} className="dark:hover:text-white hover:text-black transition ease-linear cursor-pointer"/>
+                        <div className="text-white/50 grid content-center bg-white/10 rounded-full p-3 ml-4">
+                            <BsFillSendFill size={"20px"} className="hover:text-white transition ease-linear cursor-pointer"/>
                         </div>
                     </button>
 
                 </form>
             </div>
 
-            <div className='flex gap-6 justify-center pt-4'>
-                <p className='font-light text-xs dark:text-white/60 text-black/70'>
-                Please be aware that the chat may not provide overly personal information.
+            <div className='flex gap-6 justify-center py-4'>
+                <p className='font-light text-xs text-white/60'>
+                    Disclaimer: Chat may not provide fully accurate and personal information.
                 </p>
             </div>
 

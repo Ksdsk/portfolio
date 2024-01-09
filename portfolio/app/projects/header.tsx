@@ -1,4 +1,5 @@
 import { BsLinkedin, BsGithub, BsFillEnvelopeFill } from "react-icons/bs"
+import { BiSolidDownload } from "react-icons/bi"
 
 export default function Header() {
     return(
@@ -39,6 +40,8 @@ export default function Header() {
                         </a>
                     </div>
                 </div>
+
+
             </div>
         </>
     )
