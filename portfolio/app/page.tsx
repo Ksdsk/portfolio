@@ -5,7 +5,7 @@ import MainContent from './content/main'
 export default function Home() {
   return (
     <main className="flex h-screen overflow-hidden justify-center bg-zinc-900">
-      <div id="container" className="relative border rounded-3xl border-white container flex flex-col my-12">
+      <div id="container" className="relative container flex flex-col my-12">
           <div className='border-b border-white p-6'>
             <Header/>
           </div>
@@ -13,11 +13,11 @@ export default function Home() {
             <MainContent/>
           </div>
           
-          <div className='float-right p-6 absolute z-10 right-0 bottom-0'>
-            <div className='chatbox border rounded-2xl border-white'>
-              <Chat/>
-            </div>
-          </div>
+          
+
+
+          <Chat/>
+
       </div>
     </main>
   )
