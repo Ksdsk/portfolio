@@ -26,7 +26,7 @@ export default function ChatBubbles(props: {
     )
     
     return (
-        <div className="max-w-full overflow-y-auto" id="bubblearea">
+        <div className="max-w-full h-96 overflow-y-auto" id="bubblearea">
             {
                 bubbles
             }

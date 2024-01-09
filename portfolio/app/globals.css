@@ -43,10 +43,13 @@ body {
 }
 
 .chatbox {
-  height: 700px;
   width: 400px;
   backdrop-filter: blur(5px);
   box-shadow: 0 0px 25px -5px rgb(0 0 0 / 0.1), 0 3px 10px 4px rgb(0 0 0 / 0.1);
+}
+
+#bubblearea {
+  height: 500px;
 }
 
 .title {
