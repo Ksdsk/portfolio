@@ -26,13 +26,9 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-main {
-  /* background-image: url('../public/preview.jpg'); */
-}
-
 /* width */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
 }
 
 /* Track */
@@ -42,7 +38,20 @@ main {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #333333;
-  border-radius: 4px;
+  background: #BBBBBB;
+  border-radius: 10px;
 }
 
+
+
+#bubblearea {
+  height: 500px;
+}
+
+.main-rounded {
+  border-radius: 5%
+}
+
+.hero-cover {
+  height: 60rem
+}

@@ -1,13 +1,26 @@
 import Chat from './chat'
+import Header from './layouts/header'
+import MainContent from './content/main'
 
 export default function Home() {
   return (
-    <main className="bg-cover h-screen flex justify-center dark:bg-black bg-blue-50">
-      <div id="container" className="container dark:bg-black  bg-blue-50 flex flex-col justify-between md:py-20 sm:py-0">
-        <div className='dark:bg-white/5 bg-blue-900/5 md:rounded-3xl py-6 h-full'>
-          <Chat/>
+    <>
+      <main className="flex h-screen justify-center bg-zinc-900 overflow-hidden">
+        <div id="container" className="relative flex flex-col sm:mt-12 mb-12 container">
+
+            <Header/>
+            <Chat/>
+
+
+            <div className='overflow-y-scroll z-10 sm:rounded-3xl'>
+              <div className='min-h-screen'>
+                <MainContent/>
+              </div>
+            </div>
         </div>
-      </div>
-    </main>
+
+      </main>
+    </>
+
   )
 }

@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import {BsFillSendFill} from "react-icons/bs"
+import { IoChatboxEllipsesSharp } from "react-icons/io5";
 
 interface IBubble {
     type: string;
@@ -66,34 +67,38 @@ export default function ChatBox(props: { handleCallback: (arg0: IBubble[]) => vo
     }
 
     return (
-        <div className='pt-6'>
-            <div className='flex justify-between gap-6'>
-                <form className='dark:text-gray-400 text-black flex w-full' onSubmit={onSubmit} method="POST">
-                    <input type="text" name="prompt" className='backdrop-blur-md dark:bg-white/10 bg-black/10 focus:outline-none dark:focus:text-white focus:text-black rounded-full py-2 pl-6 pr-12 w-full dark:placeholder-white/50 placeholder-gray-500'
-                    placeholder='Try asking me "Tell me about yourself"'
-                    onChange={(e) => {
-                        setInput(e.target.value)
-                    }}
-                    value={input}
-                    disabled={disabled}
-                    >
-                    </input>
+        <>
 
-                    <button type="submit" className="">
-                        <div className="dark:text-white/50 text-black/50 grid content-center dark:bg-white/10 bg-black/10 rounded-full p-3 ml-4">
-                            <BsFillSendFill size={"20px"} className="dark:hover:text-white hover:text-black transition ease-linear cursor-pointer"/>
-                        </div>
-                    </button>
+                <div className='m-4'>
+                    <div className='flex justify-between gap-6'>
+                        <form className='text-gray-400 flex w-full' onSubmit={onSubmit} method="POST">
+                            <input type="text" name="prompt" className='border border-white/50 focus:border-white hover:text-white hover:border-white transition ease-linear bg-zinc-800 focus:outline-none focus:text-white rounded-full py-2 pl-6 pr-12 w-full placeholder-white/50'
+                            placeholder='Ask me anything...'
+                            onChange={(e) => {
+                                setInput(e.target.value)
+                            }}
+                            value={input}
+                            disabled={disabled}
+                            >
+                            </input>
 
-                </form>
-            </div>
+                            <button type="submit" className="">
+                                <div className="text-white/50 border cursor-pointer transition ease-linear  border-white/50 grid hover:text-white hover:border-white content-center bg-zinc-800 rounded-full p-3 ml-4">
+                                    <BsFillSendFill size={"20px"}/>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
 
-            <div className='flex gap-6 justify-center pt-4'>
-                <p className='font-light text-xs dark:text-white/60 text-black/70'>
-                Please be aware that the chat may not provide overly personal information.
-                </p>
-            </div>
+                    <div className='flex justify-center mt-2'>
+                        <p className='font-light text-xs text-white/60'>
+                            Chat may not provide fully accurate and personal information.
+                        </p>
+                    </div>
+                </div>
 
-        </div>
+
+        </>
+
     )
 }

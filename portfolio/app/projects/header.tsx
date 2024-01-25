@@ -8,6 +8,13 @@ export default function Header() {
                 <p>Daniel Kang :&#41;</p>
             </div>
             <div className="flex justify-end gap-3 dark:text-white/50 text-black/70">
+                <a className="dark:hover:text-white hover:text-black dark:hover:border-white/80 hover:border-black transition ease-linear" href="/projects">
+                    <div className="flex gap-1">
+                        <p className="bg-violet-500 px-2 rounded-full font-semibold">NEW</p>
+                        <p className="font-semibold">2024 Projects</p>
+                    </div>
+                </a>
+                <div className="border-l dark:border-white/50 border-black/70"></div>
                 <a className="dark:hover:text-white hover:text-black dark:hover:border-white/80 hover:border-black transition ease-linear" href="Daniel_Kang_NewGradResume_2024.pdf" download={true}>
                     <div className="flex gap-1">
                         <p className="border-b dark:border-white/50 border-black/50 font-semibold">Resume</p>
