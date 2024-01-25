@@ -19,7 +19,7 @@ export default function Hero() {
                                 Hey there!
                             </p>
                             <p className={`${font.className} mt-2 pl-2 pr-4 sm:text-lg text-sm`}>
-                                I'm Daniel, a software engineer.
+                                I&apos;m Daniel, a software engineer.
                             </p>
                         </div>
                     </div>

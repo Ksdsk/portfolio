@@ -6,7 +6,7 @@ export default function Dal() {
             <p className="text-md">Start Date: Dec 2022</p>
             <div className="border w-full"></div>
             <ul className="list-disc ml-10">
-                <li className="text-md">Reinforcing students' learning by creating and carrying "Introduction to Web Development" labs for 200+ students.</li>
+                <li className="text-md">Reinforcing students`&apos; learning by creating and carrying &quot;Introduction to Web Development&quot; labs for 200+ students.</li>
                 <li className="text-md">Increased the speed of grading by average of 250% through automating scripts to detect for erroneous submissions.</li>
                 <li className="text-md">Protecting students from breaking academic integrity through proctoring assessments.</li>
             </ul>

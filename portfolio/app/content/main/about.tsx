@@ -8,7 +8,7 @@ export default function About() {
             <p className={`${font.className} text-6xl`}>About me</p>
             <div className='lg:w-2/3 flex flex-col gap-5 text-lg text-zinc-200'>
                 <p className=''>
-                    I'm Daniel Kang, a fourth-year computer science student at Dalhousie 
+                    I&apos;m Daniel Kang, a fourth-year computer science student at Dalhousie 
                     University with a passion for software development. I have interned at Amazon Web Services 
                     and the Department of National Defence Canada, where I led various projects to improve 
                     system efficiency and security.
@@ -20,7 +20,7 @@ export default function About() {
                 </p>
                 <p className=''>
                     You can find more about me and my work on my LinkedIn and GitHub profiles. If you have any questions, 
-                    try asking my Daniel-AI on the bottom-right corner, such as "How's school going?". 
+                    try asking my Daniel-AI on the bottom-right corner, such as &quot;How&apos;s school going?&quot;. 
                     Whenever you need to reach out to me, feel free to email me! 
                     These social links all be located in the top right corner of the website. 
                 </p>
