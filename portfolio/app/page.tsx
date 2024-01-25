@@ -4,21 +4,23 @@ import MainContent from './content/main'
 
 export default function Home() {
   return (
-    <main className="flex h-screen overflow-hidden justify-center bg-zinc-900">
-      <div id="container" className="relative container flex flex-col my-12">
-          <div className='border-b border-white p-6'>
+    <>
+      <main className="flex h-screen justify-center bg-zinc-900 overflow-hidden">
+        <div id="container" className="relative flex flex-col sm:mt-12 mb-12 container">
+
             <Header/>
-          </div>
-          <div className='content overflow-y-scroll px-6 mb-6 mt-3'>
-            <MainContent/>
-          </div>
-          
-          
+            <Chat/>
 
 
-          <Chat/>
+            <div className='overflow-y-scroll z-10 sm:rounded-3xl'>
+              <div className='min-h-screen'>
+                <MainContent/>
+              </div>
+            </div>
+        </div>
 
-      </div>
-    </main>
+      </main>
+    </>
+
   )
 }

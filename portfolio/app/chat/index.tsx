@@ -20,13 +20,13 @@ export default function Chat() {
 
     return (
         <>
-        <div className='float-right p-6 absolute z-10 right-0 bottom-0'>
+        <div className='float-right mx-10 my-10 absolute right-0 bottom-0 z-50'>
             <div className=''>
                 {
                     chatVisibility ? 
                     <>
 
-                    <div className="chatbox rounded-xl relative shadow-zinc-950/40 mt-3 flex flex-col justify-between">
+                    <div className=" shadow-lg sm:w-96 rounded-xl relative backdrop-blur-lg border bg-zinc-100/10 shadow-zinc-950/40 mt-3 flex flex-col justify-between">
                         <div className="flex justify-end relative">
                             <button className="transition ease-linear grid content-center"
                                 onClick={() => {
@@ -49,7 +49,7 @@ export default function Chat() {
                     </>
                     : 
                     <>
-                    <button className="transition ease-linear border border-white/50 hover:border-white hover:text-white text-white/50 bg-zinc-800 grid content-center rounded-full p-3"
+                    <button className=" shadow-lg shadow-black transition ease-linear border border-white/50 hover:border-green-500 hover:text-green-500 text-white/50 bg-zinc-800/10 backdrop-blur-md grid content-center rounded-full p-3"
                     onClick={() => {
                         setChatVisibility(true)
                     }}

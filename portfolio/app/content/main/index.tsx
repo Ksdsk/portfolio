@@ -1,12 +1,15 @@
-import { Bungee_Hairline } from 'next/font/google'
-const kaushan_script = Bungee_Hairline({weight: "400", subsets: ["latin"]})
+import About from "./about";
+import Work from "./work";
+import Hero from "./hero";
 
 export default function MainContent() {
     return (
-        <>
-            <p className={`${kaushan_script.className} title text-pink-300 text-center`}>
-                Hey there!
-            </p>
-        </>
+        <div>
+            <div className="flex flex-col gap-40 pb-20">
+                <Hero/>
+                <About/>
+                <Work/>
+            </div>
+        </div>
     )
 }
